@@ -5,6 +5,8 @@
   <head>
     <!-- Required meta tags -->
 
+
+    
     @include('admin.css')
 
   </head>
@@ -20,6 +22,7 @@
 <!-- partial -->
 
 @include('admin.body')
+
 
     <!-- container-scroller -->
     <!-- plugins:js -->

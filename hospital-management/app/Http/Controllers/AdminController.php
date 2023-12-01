@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 use App\Models\Doctor;
 
 class AdminController extends Controller
@@ -27,5 +27,22 @@ class AdminController extends Controller
 
         $doctor->save();
         return redirect ()->back()->with('message', 'Doctor Added Successfully');
+    }
+
+
+
+    public function index(){
+
+        if(Auth::user()->usertype=='1')
+        {
+            $doctor = doctor::all();
+     return view('admin.home', compact('doctor'));
+        }
+        else 
+        {
+            return redirect()->back();
+        }
+        
+        
     }
 }
