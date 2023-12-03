@@ -5,25 +5,33 @@
        
           
 
-           @if($doctor->isNotEmpty())
-  
-    @foreach($doctor as $doctors)
-    <div class="item">
-        <div class="card-doctor">
-          <div class="header">
-            <img height="300px" src="doctorimage/{{$doctors->image}}" alt="">
-            <div class="meta">
-              <a href="#"><span class="mai-call"></span></a>
-              <a href="#"><span class="mai-logo-whatsapp"></span></a>
-            </div>
-          </div>
-          <div class="body">
-            <p class="text-xl mb-0">{{ $doctors->name}}</p>
-            <span class="text-sm text-grey">{{ $doctors->speciality}}</span>
-          </div>
-        </div>
-      </div>
+    @if($doctors->isNotEmpty())
+    <div class="container-fluid page-body-wrapper">
+    <div align="center" style="padding-top:10px;">
+    <table>
+      <tr style="background-color:black;">
+        <th style="padding:10px">Name</th>
+        <th style="padding:10px">Phone</th>
+        <th style="padding:10px">Speciality</th>
+        <th style="padding:10px">Room No</th>
+        <th style="padding:10px">Image</th>
+        <th style="padding:10px">Delete</th>
+        <th style="padding:10px">Update</th>
+      </tr>
+    @foreach($doctors as $doctor)
+      <tr align="center" style="background-color:skyblue;">
+        <td>{{$doctor->name}}</td>
+        <td>{{$doctor->phone}}</td>
+        <td>{{$doctor->speciality}}</td>
+        <td>{{$doctor->room}}</td>
+        <td><img height="100" width="100" src="doctorimage/{{$doctor->image}}"></td>
+        <td><a href="{{url('deletedoctor', $doctor->id)}}" class="btn btn-danger" onclick="return confirm('Are you sure want to delete selected doctor?')">Delete</a></td>
+        <td><a href="{{url('updatedoctor', $doctor->id)}}" class="btn btn-primary">Update</a></td>
+      </tr>
     @endforeach
+    </table>
+    </div>
+    </div>
 @else
     <p>Tidak ada data dokter.</p>
 @endif

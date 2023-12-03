@@ -58,17 +58,17 @@
 
 <div style="padding:15px">
     <label>Phone</label>
-    <input type="text" style="color:black" name="number" placeholder="Write the number">
+    <input type="text" style="color:black" name="phone" placeholder="Write the number">
 </div>
 
 <div style="padding:15px">
     <label>Speciality</label>
-   <select name="Speciality" style="color:black; width: 200px;">
-    <option>--Select--</option>
-    <option value="skin">Skin</option>
-    <option value="heart">Heart</option>
-    <option value="eye">Eye</option>
-    <option value="nosse">Nose</option>
+   <select name="speciality" style="color:black; width: 200px;">
+    <option value="">--Select--</option>
+    <option value="Skin">Skin</option>
+    <option value="Heart">Heart</option>
+    <option value="Eye">Eye</option>
+    <option value="Nose">Nose</option>
    </select>
 </div>
 
