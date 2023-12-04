@@ -26,32 +26,33 @@
   <div class="back-to-top"></div>
 
   <header>
-  
-
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
 
       <div class="container">
         <a class="navbar-brand" href=""><span class="text-primary">TCare Hospital</a>
+          
+        
 
-
-        {{-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button> --}}
+        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupport">
+        {{-- <div class="collapse navbar-collapse" id="navbarSupport"> --}}
           <ul class="navbar-nav ml-auto">
+            
             <li class="nav-item active">
               <a class="nav-link" href="home">Home</a>
             </li>
-           <li>
+           
+           
+            <li>
 
             @if(Route::has('login'))
 
             @auth
 
-            <p>user login</p>
             <x-app-layout>
-               </x-app-layout>
+            </x-app-layout>
 
             @else
 
@@ -68,9 +69,11 @@
 
               @endif
 
+              
            </li>
+           
           </ul>
-        </div> <!-- .navbar-collapse -->
+        {{-- </div> <!-- .navbar-collapse --> --}}
       </div> <!-- .container -->
     </nav>
   </header>
@@ -117,6 +120,8 @@
   @include('user.latest')
 
  @include('user.appointment')
+
+ 
 
   <footer class="page-footer">
     <div class="container">
