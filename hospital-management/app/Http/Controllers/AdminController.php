@@ -29,23 +29,6 @@ class AdminController extends Controller
         return redirect ()->back()->with('message', 'Doctor Added Successfully');
     }
 
-
-
-    public function index(){
-
-        if(Auth::user()->usertype=='1')
-        {
-            $doctors = doctor::all();
-     return view('admin.home', compact('doctors'));
-        }
-        else 
-        {
-            return redirect()->back();
-        }
-        
-        
-    }
-
     public function deletedoctor($id){
         if(Auth::user()->usertype=='1')
         {

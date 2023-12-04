@@ -17,14 +17,14 @@ class HomeController extends Controller
     {
         if(Auth::id())
         {
+            $doctors = doctor::all();
             if(Auth::user()->usertype=='0')
             {
-                $doctor = doctor::all();
-                return view('user.home', compact('doctor'));
+                return view('user.home', compact('doctors'));
             }
             else 
             {
-                return view('admin.home');
+                return view('admin.home', compact('doctors'));
             }
         }
         else{
@@ -39,8 +39,8 @@ public function index()
     }
     else
     {
-     $doctor = doctor::all();
-     return view('user.home', compact('doctor'));
+     $doctors = doctor::all();
+     return view('user.home', compact('doctors'));
     }
     
 }
