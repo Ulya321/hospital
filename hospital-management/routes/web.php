@@ -19,9 +19,6 @@ use App\Http\Controllers\AdminController;
 
 
 
-Route::get('/tes', function(){
-    return view('user.tes');
-});
 
 Route::get('/',[HomeController::class,'index']);
 
