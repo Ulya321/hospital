@@ -2,8 +2,6 @@
     <div class="container">
       <h1 class="text-center     mb-5 wow fadeInUp">Doctor List</h1>
   
-       
-          
 
     @if($doctors->isNotEmpty())
     <div class="container-fluid page-body-wrapper">
