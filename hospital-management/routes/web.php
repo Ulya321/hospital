@@ -37,8 +37,6 @@ Route::get('/add_doctor_view',[AdminController::class,'addview']);
 
 Route::post('/upload_doctor',[AdminController::class,'upload']);
 
-Route::get('/homeadmin', [AdminController::class, 'index']);
-
 Route::get('/deletedoctor/{id}', [AdminController::class, 'deletedoctor']);
 
 Route::get('updatedoctor/{id}', [AdminController::class, 'updatedoctor']);
