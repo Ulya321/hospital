@@ -8,8 +8,8 @@
     @if($doctors->isNotEmpty())
     <div class="container-fluid page-body-wrapper">
     <div align="center" style="padding-top:10px;">
-    <table>
-      <tr style="background-color:black;">
+    <table class="table-bordered">
+      <tr align="center">
         <th style="padding:10px">Name</th>
         <th style="padding:10px">Phone</th>
         <th style="padding:10px">Speciality</th>
@@ -19,7 +19,7 @@
         <th style="padding:10px">Update</th>
       </tr>
     @foreach($doctors as $doctor)
-      <tr align="center" style="background-color:skyblue;">
+      <tr align="center">
         <td>{{$doctor->name}}</td>
         <td>{{$doctor->phone}}</td>
         <td>{{$doctor->speciality}}</td>
