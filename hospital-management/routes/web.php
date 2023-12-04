@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AdminController;
 
 /*
@@ -44,3 +44,7 @@ Route::get('/deletedoctor/{id}', [AdminController::class, 'deletedoctor']);
 Route::get('updatedoctor/{id}', [AdminController::class, 'updatedoctor']);
 
 Route::post('editdoctor/{id}', [AdminController::class, 'editdoctor']);
+
+Route::get('/add_news',[NewsController::class,'addnewsview']);
+
+Route::post('/store_news',[NewsController::class,'store_news']);

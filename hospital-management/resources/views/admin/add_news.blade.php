@@ -45,38 +45,25 @@
         @endif
 
 
-<form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data">
+<form action="store_news" method="POST" enctype="multipart/form-data">
 
     @csrf
+   
 
 <div style="padding:15px">
-<label>Doctor Name</label>
-<input type="text" style="color:black" name="name" placeholder="Write the name">
+<label>Title</label>
+<input type="text" style="color:black" name="title" placeholder="Write the title">
 </div>
 
 <div style="padding:15px">
-    <label>Phone</label>
-    <input type="text" style="color:black" name="phone" placeholder="Write the number">
+    <label>News</label>
+    <input type="msg" style="color:black" name="content" placeholder="Write the content">
 </div>
 
-<div style="padding:15px">
-    <label>Speciality</label>
-   <select name="speciality" style="color:black; width: 200px;">
-    <option value="">--Select--</option>
-    <option value="Skin">Skin</option>
-    <option value="Heart">Heart</option>
-    <option value="Eye">Eye</option>
-    <option value="Nose">Nose</option>
-   </select>
-</div>
 
-<div style="padding:15px">
-    <label>Room No</label>
-    <input type="text" style="color:black" name="room" placeholder="Write the room number">
- </div>
 
  <div style="padding:15px">
-            <label>Doctor Image</label>
+            <label>News Image</label>
             <input type="file" name="file">
  </div>
 

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 use App\Models\Doctor;
+use App\Models\News;
 
 
 class HomeController extends Controller
@@ -18,13 +19,14 @@ class HomeController extends Controller
         if(Auth::id())
         {
             $doctors = doctor::all();
+            $news = news::all();
             if(Auth::user()->usertype=='0')
             {
-                return view('user.home', compact('doctors'));
+                return view('user.home', compact('doctors', 'news'));
             }
             else 
             {
-                return view('admin.home', compact('doctors'));
+                return view('admin.home', compact('doctors', 'news'));
             }
         }
         else{
@@ -40,7 +42,8 @@ public function index()
     else
     {
      $doctors = doctor::all();
-     return view('user.home', compact('doctors'));
+     $news = news::all();
+     return view('user.home', compact('doctors', 'news'));
     }
     
 }
