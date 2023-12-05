@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AdminController;
 
 /*
@@ -21,7 +21,8 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/',[HomeController::class,'index']);
 
-Route::get('/home',[HomeController::class,'redirect']);
+Route::get('/home',[HomeController::class,'redirect'])->
+        middleware('auth','verified');
 
 Route::middleware([
     'auth:sanctum',
@@ -41,4 +42,12 @@ Route::post('/appointment',[HomeController::class,'appointment']);
 
 Route::get('/myappointment',[HomeController::class,'myappointment']);
 
+<<<<<<< HEAD
 Route::get('/cancel_appoint/{id}',[HomeController::class,'cancel_appoint']);
+=======
+Route::post('editdoctor/{id}', [AdminController::class, 'editdoctor']);
+
+Route::get('/add_news',[NewsController::class,'addnewsview']);
+
+Route::post('/store_news',[NewsController::class,'store_news']);
+>>>>>>> farel

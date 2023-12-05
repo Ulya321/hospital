@@ -9,8 +9,12 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 use App\Models\Doctor;
+<<<<<<< HEAD
 
 use App\Models\Appointment;
+=======
+use App\Models\News;
+>>>>>>> farel
 
 
 class HomeController extends Controller
@@ -19,6 +23,7 @@ class HomeController extends Controller
     {
         if(Auth::id())
         {
+<<<<<<< HEAD
             if(Auth::user()->usertype=='0')
             {
                 $doctor = doctor::all();
@@ -27,6 +32,17 @@ class HomeController extends Controller
             else 
             {
                 return view('admin.home');
+=======
+            $doctors = doctor::all();
+            $news = news::all();
+            if(Auth::user()->usertype=='0')
+            {
+                return view('user.home', compact('doctors', 'news'));
+            }
+            else 
+            {
+                return view('admin.home', compact('doctors', 'news'));
+>>>>>>> farel
             }
         }
         else{
@@ -41,12 +57,19 @@ public function index()
     }
     else
     {
+<<<<<<< HEAD
      $doctor = doctor::all();
      return view('user.home', compact('doctor'));
+=======
+     $doctors = doctor::all();
+     $news = news::all();
+     return view('user.home', compact('doctors', 'news'));
+>>>>>>> farel
     }
     
 }
 
+<<<<<<< HEAD
 public function appointment(Request $request)
 {
    $data = new appointment; 
@@ -97,4 +120,6 @@ public function cancel_appoint($id)
     return redirect()->back();
 }
 
+=======
+>>>>>>> farel
 }

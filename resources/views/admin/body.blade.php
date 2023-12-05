@@ -1,6 +1,7 @@
 
 <div class="main-panel">
     <div class="content-wrapper">
+<<<<<<< HEAD
       <div class="row">
         <div class="col-12 grid-margin stretch-card">
           <div class="card corona-gradient-card">
@@ -670,6 +671,16 @@
         <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
       </div>
     </footer>
+=======
+      <form method="POST" action="{{ route('logout') }}">
+        @csrf
+       
+    </form>
+     @include('admin.doctor')
+    <!-- content-wrapper ends -->
+    <!-- partial:partials/_footer.html -->
+    
+>>>>>>> farel
     <!-- partial -->
   </div>
   <!-- main-panel ends -->

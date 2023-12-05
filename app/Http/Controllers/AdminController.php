@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 
+=======
+use Illuminate\Support\Facades\Auth;
+>>>>>>> farel
 use App\Models\Doctor;
 
 class AdminController extends Controller
@@ -28,4 +32,50 @@ class AdminController extends Controller
         $doctor->save();
         return redirect ()->back()->with('message', 'Doctor Added Successfully');
     }
+<<<<<<< HEAD
+=======
+
+    public function deletedoctor($id){
+        if(Auth::user()->usertype=='1')
+        {
+            $data=doctor::find($id);
+            $data->delete();
+        }
+        return redirect()->back();
+    }
+
+    public function updatedoctor($id)
+    {
+        if(Auth::user()->usertype=='1')
+        {
+            $data = doctor::find($id);
+            return view('admin.update_doctor', compact('data'));
+        }
+        return redirect()->back();
+    }
+
+    public function editdoctor(Request $request, $id)
+    {
+        if(Auth::user()->usertype=='1')
+        {
+            $doctor = doctor::find($id);
+            $doctor->name = $request->name;
+            $doctor->phone = $request->phone;
+            $doctor->speciality = $request->speciality;
+            $doctor->room = $request->room;
+            
+            $image = $request->file;
+            if($image)
+            {
+                $imagename = time().'.'.$image->getClientOriginalExtension();
+                $request->file->move('doctorimage', $imagename);
+                $doctor->image = $imagename;
+            }
+            
+            $doctor->save();
+            return redirect()->back()->with('message', 'Doctor Details Updated Successfully');
+        }
+        return redirect()->back();
+    }
+>>>>>>> farel
 }
