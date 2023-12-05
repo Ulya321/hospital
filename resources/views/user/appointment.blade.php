@@ -22,9 +22,9 @@
 
         <option>---select doctor---</option>
 
-              @foreach($doctor as $doctors)
+              @foreach($doctors as $doctor)
 
-              <option value="{{$doctors->name}}">{{ $doctors->name}} ---speciality--- {{ $doctors->speciality}}</option>
+              <option value="{{$doctor->name}}">{{ $doctor->name}} ---speciality--- {{ $doctor->speciality}}</option>
 
               @endforeach
 

@@ -42,12 +42,10 @@ Route::post('/appointment',[HomeController::class,'appointment']);
 
 Route::get('/myappointment',[HomeController::class,'myappointment']);
 
-<<<<<<< HEAD
 Route::get('/cancel_appoint/{id}',[HomeController::class,'cancel_appoint']);
-=======
+
 Route::post('editdoctor/{id}', [AdminController::class, 'editdoctor']);
 
 Route::get('/add_news',[NewsController::class,'addnewsview']);
 
 Route::post('/store_news',[NewsController::class,'store_news']);
->>>>>>> farel
